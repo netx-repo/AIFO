@@ -76,7 +76,7 @@ Below we show how to configure the environment, how to run the system and how to
       - DPDK (16.11.1) on the servers.<br>
         You can either refer to the [official guide](https://doc.dpdk.org/guides/linux_gsg/quick_start.html) or use the tools.sh script in dpdk_code/.
         ```shell
-        cd dpdk_code
+        cd aifo_testbed/host_code/
         ./tools.sh install_dpdk
         ```
       - Linux kernel version (after 4.10.0).<br>
@@ -101,6 +101,7 @@ We provide a script `console.py` to organize and run the switch and servers. Her
    - `aifo_testbed/aifo_switch/controller/ports.json`: use the information (actual enabled ports) on your switch, also configure the ips (`ipv4_table_address_list`) and ports (`ipv4_table_port_list`) in `aifo_testbed/aifo_switch/controller/test.py`
    - `aifo_testbed/simple_switch/controller_init/[ports.json|test.py]`: use the information from your local cluster.
    - `aifo_testbed/sppifo/controller_init/[ports.json|test.py]`: use the information from your local cluster.
+   - Replace the PCI address (`PCI_PATH`) as the address of your DPDK NIC in `aifo_testbed/host_code/tools.sh` and `aifo_testbed/host_code/incast_dpdk/tools.sh`
 2. Setup the switch
    - Setup the necessary environment variable.
    - Copy the files to the switch: `python console.py init_sync_switch`.
