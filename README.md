@@ -89,9 +89,10 @@ Below we show how to configure the environment, how to run the system and how to
   - Please check details [here](aifo_simulation/java-code/README.md).
   
 ## 3. How to run and reproduce the results<br>
-### Testbed experiment results (Figure 14 & Figure 15)
+### 3.1 Testbed experiment results (Figure 14 & Figure 15)
 
-We provide a script `console.py` to organize and run the switch and servers. Here we show how to run AIFO.
+We provide a script `console.py` to organize and run the switch and servers. Here we show how to run AIFO.<br>
+(**Note for SIGCOMM'21 artifact evaluation process**: We can provide testbed if needed (could help skip the first step).)
 1. Configure the parameters in the files based on your environment
    - `config.py`: You need to provide the information of your servers and switch (username, passwd, hostname, dir). 
      - `local_home_dir` is the current path;
@@ -134,14 +135,12 @@ We provide a script `console.py` to organize and run the switch and servers. Her
        - Figure 15(b): `Eval_tcp_sppifo.pdf` 
        - Figure 15(c): `Eval_tcp_aifo.pdf` 
 
-6. **Note for SIGCOMM'21 artifact evaluation process**: We can provide testbed if needed (could help skip the first step).
-
 <!-- 7. Other commands<br>
    There are also some other commands you can use:
    - `python console.py [sync_switch|sync_host]`<br>
      Incrementally sync files to switch/servers
    - `python console.py ` -->
-### Simulation results (Figure 7~13 & Figure 16)
+### 3.2 Simulation results (Figure 7~13 & Figure 16)
 1. Please refer to the [instruction](aifo_simulation/java-code/README.md) to reproduce the simualtion results.
 2. Interpret the results.
    - `parse.py` can also generate figures for simulation results.
