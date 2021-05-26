@@ -1,0 +1,45 @@
+# Mac
+.DS_Store
+
+# Excutable file
+bin/
+
+# Playground
+playground/
+
+*.pcap
+
+# Backup file
+*.bak
+*.bak.*
+
+# Python byte code
+*.pyc
+
+# Object file
+*.o
+
+*.e
+
+# Temp file
+*.swp
+*.tmp
+tmp.*
+
+# Data
+*.csv
+*.in
+*.out
+*.stat
+
+# Figures
+!*.pdf
+
+# Function code
+simulator.py
+
+*.zip
+
+results/
+*_bak/
+.ipynb_checkpoints/
