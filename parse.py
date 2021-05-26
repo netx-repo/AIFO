@@ -134,32 +134,32 @@ class SimulationResultParser:
         self.all_comparison_geq_1mb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload/pFabric_geq_1MB_mean_fct_ms.dat'
 
         # queue length
-        self.queue_length_less_100kb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_less_100KB_mean_fct_ms.dat'
-        self.queue_length_less_100kb_99th_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_less_100KB_99th_fct_ms.dat'
-        self.queue_length_geq_1mb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_geq_1MB_mean_fct_ms.dat'
-        self.queue_length_less_100kb_mean_fct_14_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_less_100KB_mean_fct_ms.dat'
-        self.queue_length_less_100kb_99th_fct_14_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_less_100KB_99th_fct_ms.dat'
-        self.queue_length_geq_1mb_mean_fct_14_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_geq_1MB_mean_fct_ms.dat'
+        self.queue_length_less_100kb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_less_100KB_mean_fct_ms.dat'
+        self.queue_length_less_100kb_99th_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_less_100KB_99th_fct_ms.dat'
+        self.queue_length_geq_1mb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len/pFabric_geq_1MB_mean_fct_ms.dat'
+        self.queue_length_less_100kb_mean_fct_14_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_less_100KB_mean_fct_ms.dat'
+        self.queue_length_less_100kb_99th_fct_14_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_less_100KB_99th_fct_ms.dat'
+        self.queue_length_geq_1mb_mean_fct_14_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_1_4/pFabric_geq_1MB_mean_fct_ms.dat'
 
         # window length
-        self.window_length_less_100kb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_less_100KB_mean_fct_ms.dat'
-        self.window_length_less_100kb_99th_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_less_100KB_99th_fct_ms.dat'
-        self.window_length_geq_1mb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_geq_1MB_mean_fct_ms.dat'
+        self.window_length_less_100kb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_less_100KB_mean_fct_ms.dat'
+        self.window_length_less_100kb_99th_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_less_100KB_99th_fct_ms.dat'
+        self.window_length_geq_1mb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_w_sr/pFabric_geq_1MB_mean_fct_ms.dat'
 
         # accepting set
-        self.accept_set_aifo_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/AIFO.dat'
-        self.accept_set_tcp_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/TCP.dat'
-        self.accept_set_pifo_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/PIFO.dat'
-        self.accept_set_sppifo_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/SPPIFO.dat'
+        self.accept_set_aifo_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/AIFO.dat'
+        self.accept_set_tcp_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/TCP.dat'
+        self.accept_set_pifo_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/PIFO.dat'
+        self.accept_set_sppifo_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/selfDefinedFlows/SPPIFO.dat'
 
         # fairness
-        self.fairness_less_100KB_mean_fct_ms_32_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat'
-        self.fairness_split_mean_fct_ms_32_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat'
+        self.fairness_less_100KB_mean_fct_ms_32_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/fairness/web_search_workload/fairness_less_100KB_mean_fct_ms_32.dat'
+        self.fairness_split_mean_fct_ms_32_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/fairness/web_search_workload/fairness_split_mean_fct_ms_32.dat'
 
         # K
-        self.k_less_100kb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_less_100KB_mean_fct_ms.dat'
-        self.k_less_100kb_99th_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_less_100KB_99th_fct_ms.dat'
-        self.k_geq_1mb_mean_fct_name = f'/Users/zyu/Projects/AE/aifo-ae/aifo/aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_geq_1MB_mean_fct_ms.dat'
+        self.k_less_100kb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_less_100KB_mean_fct_ms.dat'
+        self.k_less_100kb_99th_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_less_100KB_99th_fct_ms.dat'
+        self.k_geq_1mb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_geq_1MB_mean_fct_ms.dat'
 
         return
     
