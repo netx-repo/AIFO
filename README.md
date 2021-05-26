@@ -9,7 +9,7 @@ AIFO computes a rank quantile for a coming packet and decides whether to admit t
 We provide a hardware prototype on Tofino and a simulation based on a packet-level simulator NetBench. 
 
 Here we show how we implement the sliding-window-based quantile estimation (spatial component) and queue length estimation (temporal component) in the hardware prototype.
-- Quantile estimation
+- **Quantile estimation**<br>
   The sliding window is implemented with a bunch of registers `window_x_y_register` and a pointer `tail_reg`. For each packet, we check its rank (`meta.rank`) and see if it is smaller than the value in the register:
   ```p4
   #define BLACKBOX_CHECK_WINDOW(i,j) \
@@ -28,15 +28,18 @@ Here we show how we implement the sliding-window-based quantile estimation (spat
    }
   ```
 
-- Queue length estimation
-  The queue length is maintained by a couple of "worker packets" which are recirculated all the time. Normal packets retrieve queue length and store it into register `eg_queue_length_reg` at egress. While "worker packets" read value from `eg_queue_length_reg`, get recirculated and put the value into `ig_queue_length_reg` at ingress. In this way, normal packets can read queue length from `ig_queue_length_reg` and make decisions at ingress.
-  Please check this Match-Action Tables:
+- **Queue length estimation**<br>
+  The queue length is maintained by a couple of "worker packets" which are recirculated all the time. Normal packets retrieve queue length and store it into register `eg_queue_length_reg` at egress. While "worker packets" read value from `eg_queue_length_reg`, get recirculated and put the value into `ig_queue_length_reg` at ingress. In this way, normal packets can read queue length from `ig_queue_length_reg` and make admission decisions at ingress.
+  Please check these Match-Action Tables:
   ```p4
   table get_ig_queue_length_table // normal packets
   table set_ig_queue_length_table // worker packets
   table get_eg_queue_length_table // worker packets
   table set_eg_queue_length_table // normal packets
   ```
+More details of the design are available in our SIGCOMM'21 paper "Programmable Packet Scheduling with a Single Queue". [[Paper]](https://cs.jhu.edu/~zhuolong/papers/sigcomm21aifo.pdf)
+
+Below we show how to configure the environment, how to run the system and how to reproduce the results.
 
 ## 1. Content<br>
 - aifo_testbed/<br>
