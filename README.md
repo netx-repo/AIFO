@@ -115,7 +115,7 @@ We provide a script `console.py` to organize and run the switch and servers. Her
    - (Only for UDP experiments) Bind NIC to DPDK: `python console.py setup_dpdk`
      - Compile the UDP DPDK clients and servers: `python console.py compile_host`
    - (Only for TCP experiments) Return NIC to kernel: `python console.py unbind_dpdk`
-     - After unbinding DPDK, we should also configure ip address and arp for the servers. You can refer to [this](aifo_testbed/arp_conf) which we used to configure our local cluster.
+     - After unbinding DPDK, we should also configure ip address and arp for the servers. You can refer to [this](aifo_testbed/arp_conf) which we used to configure our local cluster. (**Note for SIGCOMM'21 artifact evaluation process:** In our testbed, we can simply run `python console.py set_arp` to setup the address and arp.)
 4. After both the switch and the servers are correctly configured, you can replay the results using `console.py`. The following command will execute the switch program and client/server programs automatically and grab the results to your endhost.
    - Figure 14(a): `python console.py run_udp_fifo`
    - Figure 14(b): `python console.py run_udp_sppifo`
