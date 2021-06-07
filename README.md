@@ -81,8 +81,8 @@ Below we show how to configure the environment, how to run the system and how to
         ```
       - Linux kernel version (after 4.10.0).<br>
     We provide scripts to run the experiments and to analyze the results. To use the scripts, you need:
-    - Python3, and some libraries we used to control remote machines, process results, etc.<br>
-      ```pip install paramiko matplotlib pandas```
+    - Python3 (3.7 or higher), and some libraries we used to control remote machines, process results, etc.<br>
+      ```pip install paramiko matplotlib pandas palettable```
     - iperf3, for tcp experiments.<br>
       ```apt install iperf3```
 - Simulations<br>
