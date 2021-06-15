@@ -111,7 +111,7 @@ We provide a script `console.py` to organize and run the switch and servers. Her
     They will also take **a couple of minutes**.
 3. Setup the servers
    - Install dpdk.
-   - Copy the files to the server: `python console.py init_sync_server`.
+   - Copy the files to the server: `python console.py init_sync_host`.
    - (Only for UDP experiments) Bind NIC to DPDK: `python console.py setup_dpdk`
      - Compile the UDP DPDK clients and servers: `python console.py compile_host`
    - (Only for TCP experiments) Return NIC to kernel: `python console.py unbind_dpdk`

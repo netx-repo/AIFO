@@ -788,6 +788,7 @@ class CSFQConsole(object):
 def print_usage():
     ### TODO: rewrite the usage
     prRed("Usage")
+    prRed("  python console.py init_sync_(host, switch)")
     prRed("  python console.py sync_(host, trace, switch, all)")
     prRed("  python console.py compile_(host, switch, all)")
     prRed("  python console.py run_(client, server, aifo, host, all)")
