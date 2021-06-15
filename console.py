@@ -614,6 +614,7 @@ class CSFQConsole(object):
         self.run_client()
         time.sleep(30)
         self.grab_result()
+        self.kill_host()
         return
 
     def run_udp_sppifo(self):
@@ -626,6 +627,7 @@ class CSFQConsole(object):
         self.run_client()
         time.sleep(30)
         self.grab_result()
+        self.kill_host()
         return
 
     def run_udp_sw(self):
@@ -638,6 +640,7 @@ class CSFQConsole(object):
         self.run_client()
         time.sleep(30)
         self.grab_result()
+        self.kill_host()
         return
 
     def run_tcp(self):
@@ -753,6 +756,7 @@ class CSFQConsole(object):
         
         for server in self.servers:
             print("%s run eth_down: %s" % (server[0], cmd))
+            self.sudo_exe(client, cmd, True)
 
 
     def grab_result(self):
