@@ -4,7 +4,7 @@ remote_server_home_dir = "remote server path"
 remote_switch_home_dir = "remote switch path"
 remote_switch_sde_dir  = "remote switch sde dir"
 
-id_to_usernamename_dict = {"netx1": "username", "netx2": "username", "netx3": "username",
+id_to_username_dict = {"netx1": "username", "netx2": "username", "netx3": "username",
      "netx4": "username", "netx5": "username", "netx6": "username",
      "netx7": "username", "netx8": "username", "netx9": "username",
      "netx10": "username", "netx11": "username", "netx12": "username",
