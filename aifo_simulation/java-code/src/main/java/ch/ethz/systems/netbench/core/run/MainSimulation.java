@@ -35,6 +35,12 @@ public class MainSimulation {
             else if (figureIndex == 13) {
                 MainFigure13.main(dummy);
             }
+            else if (figureIndex == 17) {
+                MainFigure17.main(dummy);
+            }
+            else if (figureIndex == 18) {
+                MainFigure18.main(dummy);
+            }
             else if (figureIndex == 0)
             {
                 MainFigure12_16.main(dummy);
@@ -44,9 +50,11 @@ public class MainSimulation {
                 MainFigure10.main(dummy);
                 MainFigure11.main(dummy);
                 MainFigure13.main(dummy);
+                MainFigure17.main(dummy);
+                MainFigure18.main(dummy);
             }
             else {
-                System.out.println("Please specify a legitimate figure index to run: 7, 8, 9, 10, 11, 12, 13, 16, or 0 (run all experiments).");
+                System.out.println("Please specify a legitimate figure index to run: 7, 8, 9, 10, 11, 12, 13, 16, 17, 18 or 0 (run all experiments).");
             }
         }
         //MainFromIntelliJ.main(args);
