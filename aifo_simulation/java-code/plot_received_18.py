@@ -6,11 +6,11 @@ import shutil, os
 
 colors = palettable.colorbrewer.qualitative.Paired_10.hex_colors
 
-protocols = ["PIFO", "AIFO"]
-q_lens = [100, 250, 375, 500]
+protocols = ["PIFO", "AIFO", "FIFO"]
+q_lens = [20, 50, 100, 200, 300]
 
 #Make plots
-fig, axs = plt.subplots(len(q_lens), len(protocols), figsize=(3*len(q_lens), 5*len(protocols)), sharex=True, sharey=True)
+fig, axs = plt.subplots(len(q_lens), len(protocols), figsize=(7*len(protocols), 3*len(q_lens)), sharex=True, sharey=True)
 fig.tight_layout(pad=3.0)
 
 for protocol_num, protocol in enumerate(protocols):
@@ -47,7 +47,7 @@ for protocol_num, protocol in enumerate(protocols):
         m_f_y = []
         s_f_x = []
         s_f_y = []
-        for i in range(60000 // gap):
+        for i in range(min((60000 // gap), len(draw_id))):
             if draw_id[i]==0:
                 l_f_x.append(i)
                 l_f_y.append(draw_data[i])

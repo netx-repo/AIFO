@@ -8,7 +8,7 @@ public class MainFigure18 {
         
         System.out.println("Creating Figure 18");
         
-        int q_lens[] = {100, 250, 375, 500};
+        int q_lens[] = {20, 50, 100, 200, 300};
 
         SelfDefinedFlows.setIsSDFTrue();
 
@@ -17,6 +17,8 @@ public class MainFigure18 {
             MainFromProperties.main(new String[]{"projects/aifo/runs/aifo_evaluation/pFabric/web_search_workload_q_len_order/3600/PIFO.properties", String.format("run_folder_name=PIFO_C%d", q_len), "second_transport_layer=udp", "link_bandwidth_bit_per_ns=1", String.format("output_port_max_size_packets=%d", q_len), "enable_inversions_tracking=false"});
             MainFromProperties.main(new String[]{"projects/aifo/runs/aifo_evaluation/pFabric/web_search_workload_q_len_order/3600/AIFO.properties", String.format("run_folder_name=AIFO_C%d", q_len), "second_transport_layer=udp", "window_size=20", "sample_count=15", String.format("output_port_max_size_packets=%d", q_len), "link_bandwidth_bit_per_ns=1", "enable_inversions_tracking=false", "k_value=0.1"});
 
+            //fifo
+            MainFromProperties.main(new String[]{"projects/aifo/runs/aifo_evaluation/pFabric/web_search_workload_q_len_order/3600/TCP.properties", String.format("run_folder_name=FIFO_C%d", q_len), "second_transport_layer=udp", "link_bandwidth_bit_per_ns=1", String.format("output_port_max_size_packets=%d", q_len), "enable_inversions_tracking=false", "transport_layer=pfabric"});
         }
 
         SelfDefinedFlows.setIsSDFFalse();
