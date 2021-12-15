@@ -8,7 +8,7 @@ public class MainFigure17 {
         double k_values[] = {0.1, 0.3, 0.7, 0.9};
         int q_lens[] = {100, 250, 375, 500};
 
-        int start_trial = 12; //first trial is 1
+        int start_trial = 1; //first trial is 1
 
 
         int trial_count= 0;
@@ -52,5 +52,7 @@ public class MainFigure17 {
             }
         }
 
+        /* Analyze */
+        MainFromProperties.runCommand("python3 projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/analyze.py", true);
     }
 }
