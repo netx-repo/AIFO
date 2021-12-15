@@ -18,7 +18,7 @@ class TestbedResultParser:
 
     def parse_udp_results(self, alg):
         fig, ax = plt.subplots(figsize=(5, 3))
-        
+
         f_list = [[], [], [], []]
         for x in range(self.num_clients):
             cmd = "cat aifo_testbed/results/server_run_%s.log | grep 'rx:' | grep 'core %d' | awk -F [' |\t']+ '{print $7}'" % (alg, x + 1)
@@ -45,11 +45,11 @@ class TestbedResultParser:
         min_len = 160
 
 
-            
+
         idx = [i+1 for i in range(min_len)]
         for i in range(min_len):
             idx[i] = idx[i] * 20.0 / (min_len)
-            
+
         plt.plot(idx, f_list[0][0:min_len], label='Flow 1',\
         color=colors[1], marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
 
@@ -78,7 +78,7 @@ class TestbedResultParser:
             res_tput = []
             for tput in out_tput:
                 res_tput.append(float(tput))
-            f_list[x] = res_tput[4:]    
+            f_list[x] = res_tput[4:]
             # print("plot_tcp_" + alg + "_" + str(x+1) + "=", res_tput)
 
         for func in f_list:
@@ -102,11 +102,11 @@ class TestbedResultParser:
         min_len = 200
 
 
-            
+
         idx = [i+1 for i in range(min_len)]
         for i in range(min_len):
             idx[i] = idx[i] * 20.0 / (min_len)
-            
+
         plt.plot(idx, f_list[0][0:min_len], label='Flow 1',\
         color=colors[1], marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
 
@@ -161,8 +161,18 @@ class SimulationResultParser:
         self.k_less_100kb_99th_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_less_100KB_99th_fct_ms.dat'
         self.k_geq_1mb_mean_fct_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_C_K/pFabric_geq_1MB_mean_fct_ms.dat'
 
+        # Queue length and K
+        self.queue_and_K_geq_1MB_mean_fct_ms_C100_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_geq_1MB_mean_fct_ms_C100.dat'
+        self.queue_and_K_geq_1MB_mean_fct_ms_C250_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_geq_1MB_mean_fct_ms_C250.dat'
+        self.queue_and_K_geq_1MB_mean_fct_ms_C375_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_geq_1MB_mean_fct_ms_C375.dat'
+        self.queue_and_K_geq_1MB_mean_fct_ms_C500_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_geq_1MB_mean_fct_ms_C500.dat'
+        self.queue_and_K_less_100KB_mean_fct_ms_C100_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_less_100KB_mean_fct_ms_C100.dat'
+        self.queue_and_K_less_100KB_mean_fct_ms_C250_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_less_100KB_mean_fct_ms_C250.dat'
+        self.queue_and_K_less_100KB_mean_fct_ms_C375_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_less_100KB_mean_fct_ms_C375.dat'
+        self.queue_and_K_less_100KB_mean_fct_ms_C500_name = f'aifo_simulation/java-code/projects/aifo/plots/aifo_evaluation/pFabric/web_search_workload_q_len_and_K/pFabric_less_100KB_mean_fct_ms_C500.dat'
+
         return
-    
+
     def fig7a(self):
         all_comparison_less_100kb_mean_fct = pd.read_csv(self.all_comparison_less_100kb_mean_fct_name, delim_whitespace=True, header=0)
 
@@ -303,7 +313,7 @@ class SimulationResultParser:
         l.set_frame_on(False)
         plt.savefig("figs/8a.pdf", bbox_inches='tight')
         return
-    
+
     def fig8b(self):
         k_less_100kb_99th_fct = pd.read_csv(self.k_less_100kb_99th_fct_name, delim_whitespace=True, header=0)
         data = k_less_100kb_99th_fct
@@ -389,7 +399,7 @@ class SimulationResultParser:
                 marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
         plt.plot(idx, data.iloc[:,2], label='win_len=20, sample_rate=1', color=colors[9],\
                 marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
-        
+
         ax.set_xlim(0.2, 0.8)
         ax.set_xticks(([0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]))
         ax.set_xlabel('Load')
@@ -418,7 +428,7 @@ class SimulationResultParser:
                 marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
         plt.plot(idx, data.iloc[:,2], label='win_len=20, sample_rate=1', color=colors[9],\
                 marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
-        
+
         ax.set_xlim(0.2, 0.8)
         ax.set_xticks(([0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]))
         ax.set_xlabel('Load')
@@ -447,7 +457,7 @@ class SimulationResultParser:
                 marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
         plt.plot(idx, data.iloc[:,2], label='win_len=20, sample_rate=1', color=colors[9],\
                 marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
-        
+
         ax.set_xlim(0.2, 0.8)
         ax.set_xticks(([0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]))
         ax.set_xlabel('Load')
@@ -854,7 +864,7 @@ class SimulationResultParser:
                     fct_aifo_mean]
         _99th_funcs = [fct_tcp_99th, fct_dctcp_99th, fct_afq_99th, fct_sppifo_99th, fct_pifo_99th,
                     fct_aifo_99th]
-       
+
         for x in range(len(_mean_funcs)):
             for i in range(len(_99th_funcs[x])):
                 _99th_funcs[x][i] = _99th_funcs[x][i] - _mean_funcs[x][i]
@@ -1071,6 +1081,254 @@ class SimulationResultParser:
         plt.savefig("figs/16d.pdf", bbox_inches='tight')
         return
 
+    def fig17a(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_less_100KB_mean_fct_ms_C100_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=1.5)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17a.png", bbox_inches='tight')
+        return
+
+    def fig17b(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_less_100KB_mean_fct_ms_C250_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=3.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17b.png", bbox_inches='tight')
+        return
+
+    def fig17c(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_less_100KB_mean_fct_ms_C375_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=4.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17c.png", bbox_inches='tight')
+        return
+
+    def fig17d(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_less_100KB_mean_fct_ms_C500_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=5.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17d.png", bbox_inches='tight')
+        return
+
+    def fig17e(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_geq_1MB_mean_fct_ms_C100_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=90.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17e.png", bbox_inches='tight')
+        return
+
+    def fig17f(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_geq_1MB_mean_fct_ms_C250_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=90.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17f.png", bbox_inches='tight')
+        return
+
+    def fig17g(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_geq_1MB_mean_fct_ms_C375_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=90.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17g.png", bbox_inches='tight')
+        return
+
+    def fig17h(self):
+        queue_and_K = pd.read_csv(self.queue_and_K_geq_1MB_mean_fct_ms_C500_name, delim_whitespace=True, header=0)
+        data = queue_and_K
+        fig, ax = plt.subplots(figsize=(5, 3))
+        # print(data.C200)
+        idx = [0.5, 0.6, 0.7, 0.8]
+
+        plt.plot(idx, data.K1, label='k=0.1', color=colors[1],\
+                marker='s', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K3, label='k=0.3', color=colors[3],\
+                marker='^', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K7, label='k=0.7', color=colors[5],\
+                marker='P', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+        plt.plot(idx, data.K9, label='k=0.9', color=colors[9],\
+                marker='D', markersize=6, lw=1, linestyle=linestyles[0], clip_on=False)
+
+        ax.set_xlim(0.5, 0.8)
+        ax.set_xticks(([0.5, 0.6, 0.7, 0.8]))
+        ax.set_xlabel('Load')
+        ax.xaxis.set_ticks_position('bottom')
+        ax.set_ylabel('Flow completion time (ms)')
+        ax.set_ylim(ymin=0, ymax=90.0)
+        # ax.set_yticks(([0, 30, 60, 90, 120]))
+        ax.yaxis.set_ticks_position('left')
+
+        l = plt.legend(loc='upper left', numpoints=1, prop={'size':14}, labelspacing=0.36)
+        l.set_frame_on(False)
+        # plt.show()
+        plt.savefig("figs/17h.png", bbox_inches='tight')
+        return
+
 
 def print_usage():
     print("Usage:")
@@ -1112,6 +1370,14 @@ def main():
                 "16b": smpar.fig16b,
                 "16c": smpar.fig16c,
                 "16d": smpar.fig16d,
+                "17a": smpar.fig17a,
+                "17b": smpar.fig17b,
+                "17c": smpar.fig17c,
+                "17d": smpar.fig17d,
+                "17e": smpar.fig17e,
+                "17f": smpar.fig17f,
+                "17g": smpar.fig17g,
+                "17h": smpar.fig17h,
             }
             if (sys.argv[2] in fig_options):
                 fig_options[sys.argv[2]]()
@@ -1124,7 +1390,7 @@ def main():
             else:
                 print_usage()
                 sys.exit(0)
-            
+
 
             par = TestbedResultParser(num_clients)
 
@@ -1136,7 +1402,7 @@ def main():
                 print_usage()
                 sys.exit(0)
 
-    return 
+    return
 
 if __name__ == '__main__':
     main()
